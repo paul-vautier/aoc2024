@@ -12,4 +12,4 @@ dependencies = [
 [[package]]
 name = "pepser"
 version = "0.1.0"
-source = "git+https://github.com/paul-vautier/rust-parser.git#3124437c7cf413e9406531b42e1de55ec02c5f6f"
+source = "git+https://github.com/paul-vautier/rust-parser.git#3133a414f9a351fdf67b6fc4aa199a81d29bd8c2"
