@@ -1,6 +1,6 @@
 use pepser::{
     impls::{eof, sequence, take_while},
-    traits::{discard, drop_until, wrapped, Input, ParseResult, Parser},
+    traits::{discard, drop_until, wrapped, ParseResult, Parser},
 };
 const FILE_CONTENT: &str = include_str!("input.txt");
 fn main() {
