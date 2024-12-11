@@ -1,6 +1,4 @@
 import sys
-from math import log10, floor
-from enum import Enum
 
 
 def parse_file(file_path: str):
