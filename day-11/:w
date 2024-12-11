@@ -1,0 +1,43 @@
+import sys
+from functools import reduce
+from math import log10, floor
+
+def nb_digits(num):
+    return floor(log10(num))+1
+
+
+def parse_file(file_path: str):
+    file = open(file_path).read().strip()
+    return list(map(int, file.split(" ")))
+
+
+@cache
+def reduce_first(acc, current, ):
+    if current == 0:
+        acc.append(1)
+    else:
+
+        digits_current = nb_digits(current)
+        if digits_current % 2 == 0:
+            split = 10**(digits_current / 2)
+            acc.append(int(current//split))
+            acc.append(int(current % split))
+        else:
+            acc.append(current*2024)
+    return acc
+
+
+def solve_first(input : [int]) -> int:
+    for i in range(25):
+        input = reduce(reduce_first, input, [])
+    return len(input)
+
+
+def solve_second(input : [int], cache = {}) -> int:
+    for i in range(75):
+        input = reduce(reduce_first, input, [])
+    return len(input)
+
+
+print(solve_first(parse_file(sys.argv[1])))
+print(solve_second(parse_file(sys.argv[1])))
